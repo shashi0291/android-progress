@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.badlogic.androidgames"
+    android:versionCode="1"
+    android:versionName="1.0">
+  <application
+      android:label="@string/app_name"
+      android:hardwareAccelerated="true"
+      debuggable="true">
+    <!-- Note that sometimes 2D acceleration is faster on the CPU,
+         the book recommends testing on different target devices -->
+    <activity android:name="AndroidBasicsStarter"
+              android:label="@string/app_name">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
+      android:label="Life Cycle Test"
+      android:name=".LifeCycleTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Single Touch Test"
+      android:name=".SingleTouchTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Multi Touch Test"
+      android:name=".MultiTouchTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Key Test"
+      android:name=".KeyTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Accelerometer Test"
+      android:name=".AccelerometerTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Assets Test"
+      android:name=".AssetsTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="External Storage Test"
+      android:name=".ExternalStorageTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Sound Pool Test"
+      android:name=".SoundPoolTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Media Player Test"
+      android:name=".MediaPlayerTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Full Screen Test"
+      android:name=".FullScreenTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Render View Test"
+      android:name=".RenderViewTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Shape Test"
+      android:name=".ShapeTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Bitmap Test"
+      android:name=".BitmapTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Font Test"
+      android:name=".FontTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+    <activity
+      android:label="Surface View Test"
+      android:name=".SurfaceViewTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+  </application>
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <!-- Apparently we can write to external storage without this... -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</manifest>
