@@ -26,12 +26,12 @@ public class MainMenuScreen extends Screen {
           playClick();
         }
         if (inBounds(event, 64, 220, 192, 42)) {
-          game.setScreen(new GameScreen(game));
+//          game.setScreen(new GameScreen(game));
           playClick();
           return;
         }
         if (inBounds(event, 64, 220 + 42, 192, 42)) {
-          game.setScreen(new HighScoreScreen(game));
+          game.setScreen(new HighscoreScreen(game));
           playClick();
           return;
         }
