@@ -57,7 +57,7 @@ public class Settings {
     }
   }
 
-  public static void addScores(int score) {
+  public static void addScore(int score) {
     for (int i = 0; i < 5; i++) {
       if (highscores[i] < score) {
         for (int j = 4; j > i; j--){
