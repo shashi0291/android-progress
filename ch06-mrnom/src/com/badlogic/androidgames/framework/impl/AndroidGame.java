@@ -11,6 +11,7 @@ import android.os.PowerManager.WakeLock;
 import android.view.Window;
 import android.view.WindowManager;
 
+
 import com.badlogic.androidgames.framework.Audio;
 import com.badlogic.androidgames.framework.FileIO;
 import com.badlogic.androidgames.framework.Game;
@@ -30,7 +31,7 @@ public abstract class AndroidGame extends Activity implements Game {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -59,6 +60,13 @@ public abstract class AndroidGame extends Activity implements Game {
         PowerManager powerManager = (PowerManager)
                 getSystemService(Context.POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "GLGame");
+    }
+    
+    public void onResume() {
+    	super.onResume();
+    	wakeLock.acquire();
+    	screen.resume();
+    	renderView.resume();
     }
 
     @Override

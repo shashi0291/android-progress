@@ -52,12 +52,13 @@ public class MainMenuScreen extends Screen {
 
   private boolean inBounds(TouchEvent event, int x, int y, int width, int height) {
     return event.x > x && event.x < x + width - 1
-            && event.y > y && event.y < y + width - 1;
+            && event.y > y && event.y < y + height - 1;
   }
 
   public void present(float deltaTime) {
     Graphics graphics = game.getGraphics();
     graphics.drawPixmap(Assets.background, 0, 0);
+    graphics.drawPixmap(Assets.logo, 32, 20);
     graphics.drawPixmap(Assets.mainMenu, 64, 220);
     if (Settings.soundEnabled) {
       graphics.drawPixmap(Assets.buttons, 0, 416, 0, 0, 64, 64);

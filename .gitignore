@@ -3,4 +3,7 @@ gen/
 local.properties
 *.class
 target/
+.classpath
+.settings
+.project
 
