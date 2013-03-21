@@ -39,23 +39,12 @@ public class Snake {
     parts.add(new SnakePart(end.x, end.y));
   }
 
-  private int bound(int position, int min, int max){
-    if (position < min) {
-      return max;
-    }
-
-    if (position > max) {
-      return min;
-    }
-
-    return position;
-  }
-
   public void advance() {
     SnakePart head = parts.get(0);
 
     // add the new part
-    for (int i = parts.size() - 1; i > 0; i--) {
+    int len = parts.size() - 1;
+    for (int i = len; i > 0; i--) {
       SnakePart before = parts.get(i - 1);
       SnakePart part = parts.get(i);
       part.x = before.x;
@@ -80,9 +69,20 @@ public class Snake {
     	break;
     }
 
-    // ensure the snake is still in the world bounds
-    head.x = bound(head.x, 0, 9);
-    head.y = bound(head.y, 0, 12);
+    if (head.x < 0) {
+    	head.x = 9;
+    }
+    if (head.x > 9) {
+    	head.x = 0;
+    }
+    
+    if (head.y < 0) {
+    	head.y = 12;
+    }
+    if (head.y > 12) {
+    	head.y = 0;
+    }
+    
   }
 
   public boolean checkBitten() {

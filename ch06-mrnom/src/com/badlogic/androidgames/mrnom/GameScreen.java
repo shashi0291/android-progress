@@ -143,7 +143,7 @@ public class GameScreen extends Screen {
   public void present(float deltaTime) {
     Graphics graphics = game.getGraphics();
     graphics.drawPixmap(Assets.background, 0, 0);
-    drawWorld();
+    drawWorld(world);
     switch(state) {
       case Ready:
         drawReadyUI();
@@ -165,7 +165,7 @@ public class GameScreen extends Screen {
               graphics.getHeight() - 42);
   }
 
-  private void drawWorld() {
+  private void drawWorld(World world) {
     Graphics graphics = game.getGraphics();
     Snake snake = world.snake;
     SnakePart head = snake.parts.get(0);
