@@ -129,7 +129,7 @@ public class GameScreen extends Screen {
       TouchEvent event = touchEvents.get(i);
       if (event.type == TouchEvent.TOUCH_UP) {
         if (event.x >= 128 && event.x <= 192 &&
-            event.x >= 200 && event.y <= 264 ) {
+            event.y >= 200 && event.y <= 264 ) {
           if (Settings.soundEnabled) {
             Assets.click.play(1);
           }
