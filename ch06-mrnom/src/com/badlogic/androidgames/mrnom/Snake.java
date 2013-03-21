@@ -29,7 +29,7 @@ public class Snake {
 
   public void turnRight() {
     direction -= 1;
-    if (direction > UP) {
+    if (direction < UP) {
       direction = RIGHT;
     }
   }
@@ -76,6 +76,8 @@ public class Snake {
       case RIGHT:
         head.x += 1;
         break;
+      default:
+    	break;
     }
 
     // ensure the snake is still in the world bounds
