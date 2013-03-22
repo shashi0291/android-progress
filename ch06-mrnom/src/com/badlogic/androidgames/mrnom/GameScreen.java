@@ -3,6 +3,7 @@ package com.badlogic.androidgames.mrnom;
 import java.util.List;
 
 import android.graphics.Color;
+import android.util.Log;
 
 import com.badlogic.androidgames.framework.Game;
 import com.badlogic.androidgames.framework.Graphics;
@@ -81,19 +82,22 @@ public class GameScreen extends Screen {
           world.snake.turnRight();
         }
       }
-      world.update(deltaTime);
-      if (world.gameOver) {
-        if (Settings.soundEnabled){
-          Assets.bitten.play(1);
-        }
-        state = GameState.GameOver;
+    }
+    
+    world.update(deltaTime);
+    
+    if (world.gameOver) {
+      if (Settings.soundEnabled){
+        Assets.bitten.play(1);
       }
-      if (oldScore != world.score) {
-        oldScore = world.score;
-        score = "" + oldScore;
-        if (Settings.soundEnabled) {
-          Assets.eat.play(1);
-        }
+      state = GameState.GameOver;
+    }
+    
+    if (oldScore != world.score) {
+      oldScore = world.score;
+      score = "" + oldScore;
+      if (Settings.soundEnabled) {
+        Assets.eat.play(1);
       }
     }
   }
