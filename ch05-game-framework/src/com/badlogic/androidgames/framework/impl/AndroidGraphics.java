@@ -14,7 +14,6 @@ import android.graphics.Paint.Style;
 import android.graphics.Rect;
 
 import com.badlogic.androidgames.framework.Graphics;
-import com.badlogic.androidgames.framework.Graphics.PixmapFormat;
 import com.badlogic.androidgames.framework.Pixmap;
 
 public class AndroidGraphics implements Graphics {
@@ -109,7 +108,7 @@ public class AndroidGraphics implements Graphics {
         srcRect.top = srcY;
         // subtract by one so we don't overshoot
         srcRect.right = srcX + srcWidth - 1;
-        srcRect.bottom = srcX + srcHeight - 1;
+        srcRect.bottom = srcY + srcHeight - 1;
 
         dstRect.left = x;
         dstRect.top = y;
