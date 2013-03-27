@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.badlogic.androidgames.glbasics"
+    android:versionCode="1"
+    android:versionName="1.0">
+  <application
+      android:label="@string/app_name"
+      android:hardwareAccelerated="true"
+      debuggable="true">
+    <!-- Note that sometimes 2D acceleration is faster on the CPU,
+         the book recommends testing on different target devices -->
+    <activity android:name="GLBasicsStarter"
+              android:label="@string/app_name">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
+      android:label="GL Surface View Test"
+      android:name=".GLSurfaceViewTest"
+      android:screenOrientation="portrait"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      />
+  </application>
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <!-- Apparently we can write to external storage without this... -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</manifest>
