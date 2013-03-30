@@ -24,6 +24,7 @@
       android:configChanges="keyboard|keyboardHidden|orientation"
       />
   </application>
+  <uses-sdk android:minSdkVersion="15" />
   <uses-permission android:name="android.permission.WAKE_LOCK" />
   <!-- Apparently we can write to external storage without this... -->
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
