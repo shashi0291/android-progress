@@ -10,7 +10,9 @@ import android.widget.ListView;
 public class GLBasicsStarter extends ListActivity {
 
     String tests[] = {
-            "GLSurfaceViewTest"
+            "GLSurfaceViewTest",
+            "FirstTriangleTest",
+            "ColoredTriangleTest"
             };
 
     /** Called when the activity is first created. */

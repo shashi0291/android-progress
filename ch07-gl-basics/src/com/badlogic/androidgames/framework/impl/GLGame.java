@@ -108,7 +108,7 @@ public abstract class GLGame extends Activity implements Game, Renderer {
         screen.pause();
         screen.dispose();
         synchronized (stateChanged) {
-          this.state = GLGameState.Paused;
+          this.state = GLGameState.Idle;
           stateChanged.notifyAll();
         }
         break;
@@ -120,13 +120,13 @@ public abstract class GLGame extends Activity implements Game, Renderer {
   public void onPause() {
     synchronized (stateChanged) {
       state = isFinishing() ? GLGameState.Finished : GLGameState.Paused;
-    }
-    while(true) {
-      try {
-        stateChanged.wait();
-        break;
-      } catch(InterruptedException e) {
-        continue;
+      while(true) {
+        try {
+          stateChanged.wait();
+          break;
+        } catch(InterruptedException e) {
+          continue;
+        }
       }
     }
     wakeLock.release();
