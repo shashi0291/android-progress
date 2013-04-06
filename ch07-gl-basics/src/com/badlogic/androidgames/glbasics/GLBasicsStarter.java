@@ -12,7 +12,8 @@ public class GLBasicsStarter extends ListActivity {
     String tests[] = {
             "GLSurfaceViewTest",
             "FirstTriangleTest",
-            "ColoredTriangleTest"
+            "ColoredTriangleTest",
+            "TexturedTriangleTest"
             };
 
     /** Called when the activity is first created. */
